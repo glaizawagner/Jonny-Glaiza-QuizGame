@@ -2,12 +2,14 @@
 
 const quizQuestions = [
     {
+        id: cuid(),
         question: 'What is my name?',
         choices: ['Aiza', 'Glaiza', 'Jane', 'Mary'],
         correctAnswer: 'Glaiza'
     },
 
     {
+        id: cuid(),
         question: 'What is my favorite color',
         choices: ['Yellow', 'Green', 'Purple', 'Blue'],
         correctAnswer: 'Purple'
@@ -15,18 +17,21 @@ const quizQuestions = [
     },
 
     {
+        id: cuid(),
         question: 'What is the Capital of Arizona?',
         choices: ['Phoenix', 'Glendale', 'Peoria', 'Maryvale'],
         correctAnswer: 'Phoenix'
     },
 
     {
+        id: cuid(),
         question: 'What is my name?',
         choices: ['Aiza', 'Glaiza', 'Jane', 'Mary'],
         correctAnswer: 'Glaiza'
     },
 
     {
+        id: cuid(),
         question: 'What is my favorite color',
         choices: ['Yellow', 'Green', 'Purple', 'Blue'],
         correctAnswer: 'Purple'
@@ -34,18 +39,21 @@ const quizQuestions = [
     },
 
     {
+        id: cuid(),
         question: 'What is the Capital of Arizona?',
         choices: ['Phoenix', 'Glendale', 'Peoria', 'Maryvale'],
         correctAnswer: 'Phoenix'
     },
 
     {
+        id: cuid(),
         question: 'What is my name?',
         choices: ['Aiza', 'Glaiza', 'Jane', 'Mary'],
         correctAnswer: 'Glaiza'
     },
 
     {
+        id: cuid(),
         question: 'What is my favorite color',
         choices: ['Yellow', 'Green', 'Purple', 'Blue'],
         correctAnswer: 'Purple'
@@ -53,12 +61,14 @@ const quizQuestions = [
     },
 
     {
+        id: cuid(),
         question: 'What is the Capital of Arizona?',
         choices: ['Phoenix', 'Glendale', 'Peoria', 'Maryvale'],
         correctAnswer: 'Phoenix'
     },
 
     {
+        id: cuid(),
         question: 'What is the Capital of Arizona?',
         choices: ['Phoenix', 'Glendale', 'Peoria', 'Maryvale'],
         correctAnswer: 'Phoenix'
