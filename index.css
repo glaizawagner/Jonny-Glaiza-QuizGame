@@ -30,15 +30,12 @@ body{
    font-size: 5rem;
    padding: 8rem;
    color: purple;
-   flex: 0 1;
 }
 
 .quiz-title::after {
    font-size: 3rem;
    padding: 0;
    color: purple;
-
-   flex: 0 1;
 }
 .title {
    padding: 3rem;
@@ -190,6 +187,7 @@ h6{
    font-size: 4rem;
    color: green;
 }
+
 @media (min-width: 1281px) {
 }
 
@@ -232,19 +230,32 @@ h6{
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-   .quiz-title {
+   .quiz {
+       font-size: small;
+   }
+   .quiz-form {
 
    }
+   .quiz-title {
+      background-color: #dddddd;
+   }
    .quiz-subtitle {
-
+      font-size: 3rem !important;
    }
    .title {
 
    }
    .subtitle {
-      
+
    }
-   button {
+   .btn {
+      padding: 2rem 3rem;
+      font-size: 3rem;
+   }
+   ul {
+
+   }
+   li {
 
    }
 }
@@ -254,5 +265,33 @@ h6{
   ##Screen = B/w 320px to 479px
 */
 
-@media (max-width: 320px) {
+@media all and (max-width:320px)and(min-width:0px) {
+    .quiz {
+        font-size: small;
+    }
+    .quiz-form {
+
+    }
+    .quiz-title {
+        background-color: #dddddd;
+    }
+    .quiz-subtitle {
+        font-size: 3rem !important;
+    }
+    .title {
+
+    }
+    .subtitle {
+
+    }
+    .btn {
+        padding: 2rem 3rem;
+        font-size: 3rem;
+    }
+    ul {
+
+    }
+    li {
+
+    }
 }

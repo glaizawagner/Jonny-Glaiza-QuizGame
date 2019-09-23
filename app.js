@@ -13,7 +13,7 @@ function generateIncorrectAnswerSlide(question) {
     $('h1').hide();
     $('h4').hide();
 
-    $('#game').html(`<p class="preload-image"> The correct answer was : <b>${question.correctAnswer}</b></p>
+    $('#game').html(`<p class="preload-image"> Incorrect! The correct answer was : <b>${question.correctAnswer}</b></p>
     <img src="${randomImage(lostImages)}"/> <button id="nextQuestion" class="btn btn-next">Next &raquo;</button>`);
 //<p class="preload-image">Better luck next time!!!</p>
 }
@@ -36,17 +36,12 @@ function generateChoicesString(choicesList, id) {
 }
 
 function generateScoreElement(score) {
-    console.log(score);
     return `SCORE: ` + score;
 }
 
 function generateQuestionsLeftElement(questionsDone) {
-    //console.log(questionsLeft);
     //return `<li class="form-row"><h6><b>`+questionsLeft+`/`+quizQuestions.length+`</b> questions left</h6></li>`
-    //console.log(`Questions left: ` +questionsLeft+`/`+quizQuestions.length);
-    console.log(questionsDone, 'Tomato');
     const questionsLeft = quizQuestions.length - questionsDone.length;
-    //console.log('return in questionleft')
     return `Questions left: ` + questionsLeft + `/` + quizQuestions.length;
 
 
@@ -72,7 +67,6 @@ function renderQuizApp(score, questionsDone) {
         $('#game').html(displayResult(score, quizQuestions.length - score));
         handleReset();
     }
-    //console.log(quizQuestions[Math.floor(Math.random()*quizQuestions.length)]);
 
 }
 
@@ -111,7 +105,6 @@ function handleNextQuestion(score, questionsDone) {
         $('h1').show();
         $('h4').show();
         handleScore(score);
-        console.log(score, questionsDone, 'Here!');
         $('h4').text(generateQuestionsLeftElement(questionsDone));
         renderQuizApp(score, questionsDone);
 
@@ -136,7 +129,6 @@ function handleSubmit(score, questionsDone) {
         const id = $('#game ul').attr('id');
         const currentQuestion = quizQuestions.find((question) => question.id === id);
         const answer = $(':checked').attr('value');
-        console.log(answer, $(':checked'));
         if (!!answer || questionsDone.length === quizQuestions.length) {
             questionsDone.push(id);
             if (currentQuestion.correctAnswer === answer) {
