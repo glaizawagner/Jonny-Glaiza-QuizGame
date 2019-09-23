@@ -6,9 +6,10 @@ function generateCorrectAnswerSlide(question) {
 
     $('#game').html(`<p class = "preload-image" > Congratulations, you picked the correct answer!!!</p>
             <img src="${randomImage(winImages)}"/> <button id="nextQuestion" class="btn btn-next">Next &raquo;</button>`);
-            //<p class = "preload-image"> The correct answer is :<b>${question.correctAnswer}</b></p>
+    //<p class = "preload-image"> The correct answer is :<b>${question.correctAnswer}</b></p>
 }
-function generateIncorrectAnswerSlide(question){
+
+function generateIncorrectAnswerSlide(question) {
     $('h1').hide();
     $('h4').hide();
 
@@ -16,11 +17,12 @@ function generateIncorrectAnswerSlide(question){
     <img src="${randomImage(lostImages)}"/> <button id="nextQuestion" class="btn btn-next">Next &raquo;</button>`);
 //<p class="preload-image">Better luck next time!!!</p>
 }
+
 function generateQuestionElement(question) {
 
-    return `<ul id="${question.id}" class="wrapper" > ` 
-    + `<h2>` + question.question + `</h2>` + generateChoicesString(question.choices, question.id) +
-    `<button type="submit" class="btn btn-submit">Submit</button></ul>`;
+    return `<ul id="${question.id}" class="wrapper" > `
+        + `<h2>` + question.question + `</h2>` + generateChoicesString(question.choices, question.id) +
+        `<button type="submit" class="btn btn-submit">Submit</button></ul>`;
 
 }
 
@@ -32,56 +34,59 @@ function generateChoicesString(choicesList, id) {
     const choices = choicesList.map((choice) => generateChoiceElement(choice, id));
     return choices.join('');
 }
-function generateScoreElement(score) {
 
-return `SCORE: `+score;
+function generateScoreElement(score) {
+    console.log(score);
+    return `SCORE: ` + score;
 }
-function generateQuestionsLeftElement(questionsLeft) {
+
+function generateQuestionsLeftElement(questionsDone) {
     //console.log(questionsLeft);
     //return `<li class="form-row"><h6><b>`+questionsLeft+`/`+quizQuestions.length+`</b> questions left</h6></li>`
     //console.log(`Questions left: ` +questionsLeft+`/`+quizQuestions.length);
+    console.log(questionsDone, 'Tomato');
+    const questionsLeft = quizQuestions.length - questionsDone.length;
+    //console.log('return in questionleft')
+    return `Questions left: ` + questionsLeft + `/` + quizQuestions.length;
 
-        //console.log('return in questionleft')
-        return `Questions left: ` +questionsLeft+`/`+quizQuestions.length;
 
-    
-    
 }
 
 function renderQuizApp(score, questionsDone) {
     $('.btn-primary').hide();
     $('.game-form').show(); //showing the game form
-
+    console.log(score, questionsDone, 'Bugssss')
     const activeQuestions = quizQuestions.filter((question) => !(!!questionsDone.find((finQuestion) => (finQuestion === question.id))));
-    const questionsLeft = activeQuestions.length;
-    $('#quesLeft').html(generateQuestionsLeftElement(questionsLeft));
-    if(activeQuestions.length > 0) {
+
+    if (activeQuestions.length > 0) {
         const currentQuestion = activeQuestions[Math.floor(Math.random() * activeQuestions.length)];
         const questionsListItemsString = generateQuestionElement(currentQuestion);
-        $('h1').css('font-size', 40);
-        $('h1').css('padding', 30);
-        $('h1').text(generateScoreElement(score));
-        
-        $('h4').css('font-size', 30);
-        $('.quiz-title').css('padding-bottom', 20);
-        $('h4').text(generateQuestionsLeftElement(quizQuestions.length - questionsDone));
+        $('.quiz-title').css('font-size', 40);
+        $('.quiz-title').css('padding', 30);
+        $('.quiz-title').text(generateScoreElement(score));
+
+
+        $('.quiz-subtitle').css('padding-bottom', 20);
+        $('.quiz-subtitle').text(generateQuestionsLeftElement(questionsDone));
+        $('.quiz-subtitle').css('font-size', 30);
         $('#game').html(questionsListItemsString);
     } else {
-       $('#game').html(displayResult(score, quizQuestions.length - score));
-       handleReset();
+        $('#game').html(displayResult(score, quizQuestions.length - score));
+        handleReset();
     }
     //console.log(quizQuestions[Math.floor(Math.random()*quizQuestions.length)]);
 
 }
+
 /**
  * Display Result After User is done playing
  * This function is called when game is over
  */
 function displayResult(score, lost) {
- 
+
     $('h1').css('visibility', 'hidden');
     $('h4').css('visibility', 'hidden');
-        return `
+    return `
         <p class = "result-title">Quiz challenge results<br></p>
         <p class="result">You got <b>${score}</b> question(s) right</p>
         <p class="result">You got <b>${lost}</b> question(s) wrong</p>
@@ -97,61 +102,69 @@ function randomImage(images) {
     const randomImage = images[random];
     return randomImage;
 }
-function handleNextQuestion(score, questionsDone) {
-   
 
-    $('#nextQuestion').click(function(event) {
+function handleNextQuestion(score, questionsDone) {
+
+    if (questionsDone.length > quizQuestions.length) {
+        questionsDone.splice(0, questionsDone.length - 1);
+        score = 0;
+    }
+    $('#nextQuestion').click(function (event) {
         $('h1').show();
         $('h4').show();
-        $('h1').text(generateScoreElement(score));
-        $('h4').text(generateQuestionsLeftElement());
+        handleScore(score);
+        console.log(score, questionsDone, 'Here!');
+        $('h4').text(generateQuestionsLeftElement(questionsDone));
         renderQuizApp(score, questionsDone);
 
     });
 }
-function handleReset(){
 
-    $('#reset').click( function () {
-        $('h1').css('visibility','visible');
-        $('h4').css('visibility','visible');
-        handleQuizApp();
+function handleReset() {
+
+    $('#reset').click(function () {
+        location.reload();
     });
 
 }
-function handleScore(score){
-    $('#score').html(generateScoreElement(score));
-}
-function handleSubmit(score, questionsDone) {
 
-    $('#game').submit(function(event) {
+function handleScore(score) {
+    $('.quiz-title').html(generateScoreElement(score));
+}
+
+function handleSubmit(score, questionsDone) {
+    $('#game').submit(function (event) {
         event.preventDefault();
         const id = $('#game ul').attr('id');
         const currentQuestion = quizQuestions.find((question) => question.id === id);
         const answer = $(':checked').attr('value');
-        questionsDone.push(id);
+        console.log(answer, $(':checked'));
+        if (!!answer || questionsDone.length === quizQuestions.length) {
+            questionsDone.push(id);
+            if (currentQuestion.correctAnswer === answer) {
+                score++;
+                //added for showing score
+                handleScore(score);
 
-        if(currentQuestion.correctAnswer === answer) {
-            score++;
-             //added for showing score
-            
-            $('h1').text(generateScoreElement(score));
-            
 
-            handleScore(score);
-           
+                generateCorrectAnswerSlide(currentQuestion);
+            } else {
 
-            generateCorrectAnswerSlide(currentQuestion);
-        } else {
+                generateIncorrectAnswerSlide(currentQuestion);
+            }
 
-            generateIncorrectAnswerSlide(currentQuestion);
+            //To Do for dispaying questionsleft
+            $('.quiz-subtitle').html(generateQuestionsLeftElement(questionsDone));
+
+            handleNextQuestion(score, questionsDone);
         }
 
-        //To Do for dispaying questionsleft
-        $('h4').text(generateQuestionsLeftElement());
-
-        handleNextQuestion(score, questionsDone);
+        else {
+            alert('You need to select an Answer.')
+        }
     });
 }
+
 function handleQuizApp() {
     let score = 0;
     let questionsDone = [];
