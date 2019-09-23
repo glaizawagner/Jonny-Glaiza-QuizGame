@@ -83,7 +83,7 @@ function displayResult(score, lost) {
         <p class="result">You got <b>${score}</b> question(s) right</p>
         <p class="result">You got <b>${lost}</b> question(s) wrong</p>
         <p class="result">You answered <b>${quizQuestions.length}</b> questions </p>
-        <button class="btn btn-primary" id="reset" >Reset Game</button>
+        <button class="btn btn-reset" id="reset" >Reset Game</button>
         `;
 
 }

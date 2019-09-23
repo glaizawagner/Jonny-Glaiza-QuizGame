@@ -94,5 +94,12 @@ const winImages = [
 const lostImages = [
     './images/l1.gif',
     './images/l2.gif',
-    './images/l3.gif'
+    './images/l3.gif',
+    './images/l4.gif',
+    './images/l5.gif',
+    './images/l6.gif',
+    './images/l7.gif',
+    './images/l8.gif',
+    './images/l9.gif',
+    './images/l9.gif'
 ];
