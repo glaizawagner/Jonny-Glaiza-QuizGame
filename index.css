@@ -1,0 +1,191 @@
+
+
+/* Main CSS */
+
+html {
+   font-size: 62.5%; /*1rem=10px; 10px/16px=62.5%*/
+   background-color: lightgray;
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   font-family: 'Lucida Sans', sans-serif;
+   min-height: 100vh;
+   
+}
+
+.quiz {
+   border: 2rem solid white;
+   background-color: pink;
+   margin: 5rem;
+   height: 70rem;
+   width: auto;
+
+   text-align: center;
+   
+}
+
+.quiz-title {
+   font-size: 5rem;
+   padding: 8rem;
+   color: purple;
+
+   flex: 0 1;
+}
+
+.quiz-title::after {
+   font-size: 3rem;
+   padding: 0;
+   color: purple;
+
+   flex: 0 1;
+}
+
+.quiz-subtitle {
+   font-size: 3rem;
+   color: green;
+   
+   flex: 0 1;
+}
+
+.btn{
+   font-family: "Comic sans";
+   background-color: #ae2d59;
+   color: white;
+   border-radius: 2rem;
+   border: 2px solid #cb376a;
+   margin-top: 8rem;
+   padding: 1rem 3rem;
+   font-size: 2rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   cursor: pointer;
+
+  
+}
+.btn:hover {
+   background-color: #cb376a;
+   border: 1px solid #db7598;
+}
+
+.wrapper {
+   background-color: transparent;
+   list-style: none;
+   /*padding-top: 2rem;*/
+   border:3px solid red;
+   border-radius: 3px;
+
+
+   overflow: hidden;
+   margin: 0 5rem;
+   height: 40rem;
+
+   flex: 0 1;
+}
+
+
+.form-row{
+   color: black;
+
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+
+   flex: 0 1;
+}
+
+
+h2 {
+   order: -1;
+   color: purple;
+   font-size: 3rem;
+   text-align: center;
+   margin-top: 3rem;
+   margin-bottom: 3rem;
+
+   flex: 0 1;
+}
+
+li {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   font-size: 2rem;
+   font-weight: 300;
+   line-height: 2.5rem;
+
+   flex: 0 1;
+}
+
+input[type="radio"] {
+   margin-right: 2rem;
+   margin-left: 5rem;
+   width: 2rem;
+   height: 2rem;
+
+
+ }
+
+ .btn-submit {
+   margin-top: 3rem;
+}
+
+img {
+   border: 1px solid #ddd;
+   border-radius: 3px;
+   padding: 5px;
+   height: 50rem;
+   width: 50rem;
+   display: inline-block;
+
+   flex: 0 1;
+}
+
+.btn-next {
+   margin: 2rem auto;
+   display: block;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.preload-image {
+   text-align: center;
+   color: yellow;
+   font-size: 2.5rem;
+   font-weight: 300;
+
+   flex: 0 1;
+}
+
+/*
+header {
+   text-align: left;
+   font-size: 4rem;
+   background-color: green;
+   color: red;
+   z-index: 30;
+}*/
+
+h6{
+   text-align: left;
+   position: relative;
+   font-size: 4rem;
+   color: blue;
+   z-index: 30;
+}
+
+.result-title {
+   margin-top: -12rem;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 6rem;
+   font-weight: 400;
+   color: Blue;
+}
+
+
+.result {
+   text-align: center;
+   font-size: 4rem;
+   color: green;
+}
