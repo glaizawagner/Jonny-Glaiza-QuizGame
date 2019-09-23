@@ -16,65 +16,65 @@ const quizQuestions = [
 
     },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What is a DOM?',
-    //     choices: ['An HTML element', 'A Javascript library', 'A CSS API', 'An XML element', 'Both A and D'],
-    //     correctAnswer: 'Both A and D'
-    // },
+    {
+        id: cuid(),
+        question: 'What is a DOM?',
+        choices: ['An HTML element', 'A Javascript library', 'A CSS API', 'An XML element', 'Both A and D'],
+        correctAnswer: 'Both A and D'
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What is an Attribute in HTML?',
-    //     choices: ['.Attr(parameter1)', 'Additional information about the element', 'Something that describes an Object', 'A subset of a factory function', 'Both A and D'],
-    //     correctAnswer: 'Additional information about the element'
-    // },
+    {
+        id: cuid(),
+        question: 'What is an Attribute in HTML?',
+        choices: ['.Attr(parameter1)', 'Additional information about the element', 'Something that describes an Object', 'A subset of a factory function', 'Both A and D'],
+        correctAnswer: 'Additional information about the element'
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What does the function For Loop do?',
-    //     choices: ['A conditional statement','A while loop', 'It takes an array and modifies each item in the array', 'Iterate through a list given a condition to follow', 'None of the Above'],
-    //     correctAnswer: 'Iterate through a list given a condition to follow'
+    {
+        id: cuid(),
+        question: 'What does the function For Loop do?',
+        choices: ['A conditional statement','A while loop', 'It takes an array and modifies each item in the array', 'Iterate through a list given a condition to follow', 'None of the Above'],
+        correctAnswer: 'Iterate through a list given a condition to follow'
 
-    // },
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What is a function expression?',
-    //     choices: ['Its keyword can be used to define a function inside an expression', 'A lambda Expression', 'It can’t be stored in a variable', 'A factory function', 'Both A & C'],
-    //     correctAnswer: 'Its keyword can be used to define a function inside an expression'
-    // },
+    {
+        id: cuid(),
+        question: 'What is a function expression?',
+        choices: ['Its keyword can be used to define a function inside an expression', 'A lambda Expression', 'It can’t be stored in a variable', 'A factory function', 'Both A & C'],
+        correctAnswer: 'Its keyword can be used to define a function inside an expression'
+    },
 
 
-    // {
-    //     id: cuid(),
-    //     question: 'Which one is not a JavaScript event?',
-    //     choices: ['Click', 'Keydown', 'Mouseout', 'Load', 'Event delegation'],
-    //     correctAnswer: 'Event delegation'
+    {
+        id: cuid(),
+        question: 'Which one is not a JavaScript event?',
+        choices: ['Click', 'Keydown', 'Mouseout', 'Load', 'Event delegation'],
+        correctAnswer: 'Event delegation'
 
-    // },
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What is an event listener?',
-    //     choices: ['A primitive Javascript type', 'A place to store data', 'It detects a user’s actions and handle it', 'An HTML Element', 'A callback function'],
-    //     correctAnswer: 'It detects a user’s actions and handle it'
-    // },
+    {
+        id: cuid(),
+        question: 'What is an event listener?',
+        choices: ['A primitive Javascript type', 'A place to store data', 'It detects a user’s actions and handle it', 'An HTML Element', 'A callback function'],
+        correctAnswer: 'It detects a user’s actions and handle it'
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What is an arrow function?',
-    //     choices: ['It takes an array and modifies each item in the array', 'A Lambda Expression', 'It detects a user’s actions and  handle it', 'A compact alternative to a regular function expression', 'Both B & D'],
-    //     correctAnswer: 'Both B & D'
+    {
+        id: cuid(),
+        question: 'What is an arrow function?',
+        choices: ['It takes an array and modifies each item in the array', 'A Lambda Expression', 'It detects a user’s actions and  handle it', 'A compact alternative to a regular function expression', 'Both B & D'],
+        correctAnswer: 'Both B & D'
 
-    // },
+    },
 
-    // {
-    //     id: cuid(),
-    //     question: 'What’s one of the features of ES6?',
-    //     choices: ['‘use strict’', 'Arrow Function', 'Date.now()', 'JSON.parse()', 'Array.forEach()'],
-    //     correctAnswer: 'Arrow Function'
-    // }
+    {
+        id: cuid(),
+        question: 'What’s one of the features of ES6?',
+        choices: ['‘use strict’', 'Arrow Function', 'Date.now()', 'JSON.parse()', 'Array.forEach()'],
+        correctAnswer: 'Arrow Function'
+    }
 ];
 
 const winImages = [

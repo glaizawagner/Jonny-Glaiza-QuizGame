@@ -147,7 +147,6 @@ img {
 
 .btn-next {
    margin: 2rem auto;
-   display: block;
    display: flex;
    justify-content: flex-end;
 }
