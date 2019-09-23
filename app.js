@@ -55,20 +55,18 @@ function generateQuestionsLeftElement(questionsDone) {
 function renderQuizApp(score, questionsDone) {
     $('.btn-primary').hide();
     $('.game-form').show(); //showing the game form
-    console.log(score, questionsDone, 'Bugssss')
     const activeQuestions = quizQuestions.filter((question) => !(!!questionsDone.find((finQuestion) => (finQuestion === question.id))));
 
     if (activeQuestions.length > 0) {
         const currentQuestion = activeQuestions[Math.floor(Math.random() * activeQuestions.length)];
         const questionsListItemsString = generateQuestionElement(currentQuestion);
-        $('.quiz-title').css('font-size', 40);
-        $('.quiz-title').css('padding', 30);
+        $('.quiz-title').addClass('title');
+
         $('.quiz-title').text(generateScoreElement(score));
 
 
-        $('.quiz-subtitle').css('padding-bottom', 20);
+        $('.quiz-subtitle').addClass('subtitle');
         $('.quiz-subtitle').text(generateQuestionsLeftElement(questionsDone));
-        $('.quiz-subtitle').css('font-size', 30);
         $('#game').html(questionsListItemsString);
     } else {
         $('#game').html(displayResult(score, quizQuestions.length - score));

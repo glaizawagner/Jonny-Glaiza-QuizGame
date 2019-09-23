@@ -19,7 +19,7 @@ body{
    border: 2rem solid white;
    background-color: pink;
    margin: 5rem;
-   height: 70rem;
+   height: 85vh;
    width: auto;
 
    text-align: center;
@@ -30,7 +30,6 @@ body{
    font-size: 5rem;
    padding: 8rem;
    color: purple;
-
    flex: 0 1;
 }
 
@@ -41,12 +40,14 @@ body{
 
    flex: 0 1;
 }
-
-.quiz-subtitle {
+.title {
+   padding: 3rem;
    font-size: 3rem;
-   color: green;
-   
-   flex: 0 1;
+}
+
+.subtitle {
+   padding-bottom: 2rem;
+   font-size: 2rem;
 }
 
 .btn{
@@ -231,6 +232,21 @@ h6{
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+   .quiz-title {
+
+   }
+   .quiz-subtitle {
+
+   }
+   .title {
+
+   }
+   .subtitle {
+      
+   }
+   button {
+
+   }
 }
 
 /*
