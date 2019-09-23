@@ -1,8 +1,16 @@
 /* Main CSS */
+:root {
+   --color-primary: gray;
+   --color-primary-light: lightgray;
+   --color-primary-dark: black;
+
+
+}
+
 
 html {
    font-size: 62.5%; /*1rem=10px; 10px/16px=62.5%*/
-   background-color: lightgray;
+   background-color: white;
    margin: 0;
    padding: 0;
 }
@@ -12,25 +20,28 @@ body{
 }
 
 .quiz {
-   border: 2rem solid white;
-   background-color: pink;
+   border: 1rem double darkgray;
    margin: 5rem;
    height: 85vh;
    width: auto;
    text-align: center;
-   
+
+   border-radius: 3px;
+   background-image: linear-gradient(to right bottom, #1C2833,#34515E);
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 .quiz-title {
    font-size: 5rem;
    padding: 8rem;
-   color: purple;
+   color: #7FFFD4;
 }
 
 .quiz-title::after {
    font-size: 3rem;
    padding: 0;
-   color: purple;
+   color: #7FFFD4;
 }
 .quiz-subtitle {
     font-size: 3rem;
@@ -49,10 +60,10 @@ body{
 
 .btn{
    font-family: "Comic sans";
-   background-color: #ae2d59;
+   background-color: #008B8B;
    color: white;
    border-radius: 2rem;
-   border: 2px solid #cb376a;
+   border: 2px solid lightgray;
    margin-top: 8rem;
    padding: 1rem 3rem;
    font-size: 2rem;
@@ -63,8 +74,8 @@ body{
   
 }
 .btn:hover {
-   background-color: #cb376a;
-   border: 1px solid #db7598;
+   background-color: #1C2833;
+   border: 1px solid #7FFFD4;
 }
 
 .wrapper {
@@ -80,7 +91,7 @@ body{
 
 
 .form-row{
-   color: black;
+   color: white;
 
    display: flex;
    flex-direction: row;
@@ -92,7 +103,7 @@ body{
 
 h2 {
    order: -1;
-   color: purple;
+   color: #7FFFD4;
    font-size: 3rem;
    text-align: center;
    margin-top: 0;
@@ -105,7 +116,7 @@ li {
    margin-bottom: 1rem;
    font-size: 2rem;
    font-weight: 300;
-   line-height: 2.5rem;
+   line-height: 2.8rem;
 
    flex: 0 1;
 }
@@ -143,7 +154,7 @@ img {
 
 .preload-image {
    text-align: center;
-   color: yellow;
+   color: #7FFFD4;
    font-size: 2.5rem;
    font-weight: 300;
 
@@ -157,7 +168,7 @@ header {
    background-color: green;
    color: red;
    z-index: 30;
-}*/
+}
 
 h6{
    text-align: left;
@@ -165,7 +176,7 @@ h6{
    font-size: 4rem;
    color: blue;
    z-index: 30;
-}
+}*/
 
 .result-title {
    margin-top: -12rem;
@@ -173,14 +184,14 @@ h6{
    text-transform: uppercase;
    font-size: 6rem;
    font-weight: 400;
-   color: Blue;
+   color: #7FFFD4;
 }
 
 
 .result {
    text-align: center;
    font-size: 4rem;
-   color: green;
+   color: white;
 }
 
 /*
